@@ -12,9 +12,10 @@
     "express": "^4.16.2",
     "async": "^2.6.0",
     "azure-arm-keyvault": "1.1.0-preview",
-    "azure-keyvault": "git+ssh://github.com/Azure-Samples/app-service-msi-keyvault-node.git#azure-keyvault",
-    "ms-rest-azure": "git+ssh://github.com/Azure-Samples/app-service-msi-keyvault-node.git#ms-rest-azure",
-    "ms-rest": "^2.3.0"
+    "azure-keyvault": "git://github.com/williexu/testkv.git",
+    "ms-rest-azure": "git://github.com/williexu/testkv.git#ms-rest-azure",
+    "ms-rest": "^2.3.0",
+    "util": "0.10.3"
   },
   "scripts": {
     "start": "node index.js"
