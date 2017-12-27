@@ -75,6 +75,7 @@ and grant it the same access.
     export AZURE_CLIENT_ID={your client id}
     export AZURE_CLIENT_SECRET={your client secret}
     ```
+    > [AZURE.NOTE] On Windows, use `set` instead of `export`.
 
 1. Run the sample.
 
