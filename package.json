@@ -9,12 +9,12 @@
     "node": ">=6.9.1"
   },
   "dependencies": {
-    "express": "^4.16.2",
     "async": "^2.6.0",
     "azure-arm-keyvault": "1.1.0-preview",
     "azure-keyvault": "git://github.com/williexu/testkv.git",
-    "ms-rest-azure": "git://github.com/williexu/testkv.git#ms-rest-azure",
+    "express": "^4.16.2",
     "ms-rest": "^2.3.0",
+    "ms-rest-azure": "git://github.com/williexu/testkv.git#ms-rest-azure",
     "util": "0.10.3"
   },
   "scripts": {

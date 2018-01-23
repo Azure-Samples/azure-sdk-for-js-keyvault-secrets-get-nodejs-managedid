@@ -18,7 +18,6 @@ With [Managed Service Identity (MSI)](https://docs.microsoft.com/en-us/azure/app
 ## Prerequisites
 To run and deploy this sample, you need the following:
 1. An Azure subscription to create an App Service and a Key Vault. 
-2. [Azure CLI 2.0](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest) to run the application on your local development machine.
 
 ### Step 1: Create an App Service with a Managed Service Identity (MSI)
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure-Samples%2Fapp-service-msi-keyvault-node%2Fmaster%2Fazuredeploy.json" target="_blank">
@@ -66,7 +65,7 @@ and grant it the same access.
     npm install
     ```
 
-3.  Set up the environment variable `KEY_VAULT_URL` with your KeyVault URL of replace the variable in the index.js file.
+3.  Set up the environment variable `KEY_VAULT_URL` with your KeyVault URL or replace the variable in the index.js file.
 
 1. Export these environment variables into your current shell or update the credentials in the index.js file.
 
@@ -99,17 +98,17 @@ and grant it the same access.
 Using the `loginWithAppServiceMSI()` method from [ms-rest-azure](https://www.npmjs.com/package/ms-rest-azure) will autodetect if you're on a WebApp and get the token from the MSI endpoint. Then, the code is simply:
 
 ```javascript  
-    function get_key_vault_credentials(){
+    function getKeyVaultCredentials(){
         return msRestAzure.loginWithAppServiceMSI({resource: 'https://vault.azure.net'});
     }
 
-    function get_key_vault_secret(credentials) {
+    function getKeyVaultSecret(credentials) {
         let keyVaultClient = new KeyVault.KeyVaultClient(credentials);
         return keyVaultClient.getSecret(KEY_VAULT_URI, 'secret', "");
     }
 
-    get_key_vault_credentials().then(
-        get_key_vault_secret
+    getKeyVaultCredentials().then(
+        getKeyVaultSecret
     ).then(function (secret){
         console.log(`Your secret value is: ${secret.value}.`);
     }).catch(function (err) {
@@ -122,7 +121,7 @@ If you want to execute this same code in your local environment machine, just us
 If you need a fallback mechanism to allow this code to switch automatically from MSI to another approach, you can test for environment variables:
 
 ```javascript
-function get_key_vault_credentials(){
+function getKeyVaultCredentials(){
   if (process.env.APPSETTING_WEBSITE_SITE_NAME){
     return msRestAzure.loginWithAppServiceMSI({resource: 'https://vault.azure.net'});
   } else {
