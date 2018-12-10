@@ -10,7 +10,7 @@ let secret = process.env['APPLICATION_SECRET'];
 
 function getKeyVaultCredentials(){
   if (process.env.APPSETTING_WEBSITE_SITE_NAME){
-    return msRestAzure.loginWithAppServiceMSI();
+    return msRestAzure.loginWithAppServiceMSI({resource: 'https://vault.azure.net'});
   } else {
     return msRestAzure.loginWithServicePrincipalSecret(clientId, secret, domain);
   }
