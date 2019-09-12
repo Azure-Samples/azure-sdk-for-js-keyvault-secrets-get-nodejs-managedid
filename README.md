@@ -1,7 +1,11 @@
 ---
-services: app-service, key-vault
-platforms: node
-author: williexu
+page_type: sample
+languages:
+- javascript
+products:
+- azure
+description: "For Service-to-Azure-Service authentication, the approach so far involved creating an Azure AD application and associated credential,"
+urlFragment: app-service-msi-keyvault-node
 ---
 
 # Use Key Vault from App Service with Managed Service Identity and Nodejs
