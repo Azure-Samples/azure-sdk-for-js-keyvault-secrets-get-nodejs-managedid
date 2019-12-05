@@ -2,6 +2,7 @@ const express = require('express');
 const msRestAzure = require('ms-rest-azure');
 const KeyVault = require('azure-keyvault');
 const KEY_VAULT_URL = null || process.env['KEY_VAULT_URL'];
+const SECRET_NAME = null || process.env['SECRET_NAME'];
 
 let app = express();
 let clientId = null || process.env['AZURE_CLIENT_ID']; // service principal
@@ -18,7 +19,7 @@ function getKeyVaultCredentials(){
 
 function getKeyVaultSecret(credentials) {
   let keyVaultClient = new KeyVault.KeyVaultClient(credentials);
-  return keyVaultClient.getSecret(KEY_VAULT_URL, 'secret', "");
+  return keyVaultClient.getSecret(KEY_VAULT_URL, SECRET_NAME, "");
 }
 
 app.get('/', function (req, res) {
