@@ -96,7 +96,7 @@ From the Azure Portal, go to the Key Vault's access policies, and grant yourself
 ## Deploy this sample to Azure
 1.  Create an [Azure Web App].
 
-2.  Set environment variables using the **Settings** > **Configuration** > **Application Settings** of your WebApp. You can also change the value of the variables from `null` in the index.js file.
+2.  Set environment variables in the **Settings** > **Configuration** > **Application Settings** of your WebApp. You can also change the value of the variables from `null` in the index.js file.
 
 3.  This repository is ready to be deployed using local git. Read this tutorial to get more information on [how to push using local git through portal].
 
