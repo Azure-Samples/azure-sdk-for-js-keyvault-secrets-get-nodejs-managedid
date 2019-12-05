@@ -4,9 +4,12 @@ const identity = require('@azure/identity');
 const KEY_VAULT_URL = null || process.env['KEY_VAULT_URL'];
 
 let app = express();
+let clientId = null || process.env['AZURE_CLIENT_ID']; // service principal
+let tenantId = null || process.env['AZURE_TENANT_ID']; // tenant id
+let clientSecret = null || process.env['AZURE_CLIENT_SECRET'];
 
 function getKeyVaultCredentials() {
-  return new identity.DefaultAzureCredential();
+  return new identity.ClientSecretCredential(tenantId,clientId,clientSecret);
 }
 
 function getKeyVaultSecret(credentials) {

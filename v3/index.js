@@ -4,15 +4,15 @@ const KeyVault = require('azure-keyvault');
 const KEY_VAULT_URL = null || process.env['KEY_VAULT_URL'];
 
 let app = express();
-let clientId = process.env['AZURE_CLIENT_ID']; // service principal
-let domain = process.env['AZURE_TENANT_ID']; // tenant id
-let secret = process.env['AZURE_CLIENT_SECRET'];
+let clientId = null || process.env['AZURE_CLIENT_ID']; // service principal
+let tenantId = null || process.env['AZURE_TENANT_ID']; // tenant id
+let clientSecret = null || process.env['AZURE_CLIENT_SECRET'];
 
 function getKeyVaultCredentials(){
   if (process.env.APPSETTING_WEBSITE_SITE_NAME){
     return msRestAzure.loginWithAppServiceMSI();
   } else {
-    return msRestAzure.loginWithServicePrincipalSecret(clientId, secret, domain);
+    return msRestAzure.loginWithServicePrincipalSecret(clientId, clientSecret, tenantId);
   }
 }
 
