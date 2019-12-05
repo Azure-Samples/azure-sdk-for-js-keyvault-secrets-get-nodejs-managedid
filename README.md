@@ -92,7 +92,7 @@ Using the Azure Portal, go to the Key Vault's access policies, and grant yoursel
 6. This sample exposes two endpoints:
   
    - `/ping` : This just answers "Hello World!!!" and is a good way to test if your packages are installed correctly without testing Azure itself.
-   - `/` : The MSI sample itself
+   - `/` : This sample itself
 
 ## Deploy this sample to Azure
 1. Set environment variables using the `Settings` > `Configuration` > `Application Settings` of your WebApp. You can also change the value of the variables from `null` in the index.js file.
@@ -101,7 +101,7 @@ Using the Azure Portal, go to the Key Vault's access policies, and grant yoursel
 
 ## Summary
 The web app was successfully able to get a secret at runtime from Azure Key Vault using your developer account during development, and using Azure Managed Identities when deployed to Azure, without any code change between local development environment and Azure. 
-As a result, you did not have to explicitly handle a service principal credential to authenticate to Azure AD to get a token to call Key Vault. You do not have to worry about renewing the service principal credential either, since MSI takes care of that.
+As a result, you did not have to explicitly handle a service principal credential to authenticate to Azure AD to get a token to call Key Vault. You do not have to worry about renewing the service principal credential either, since Azure Managed Identities takes care of that.
 
 ## Troubleshooting
 ### Common issues across environments:
@@ -118,9 +118,7 @@ When you submit a pull request, a CLA-bot will automatically determine whether y
 a CLA and decorate the PR appropriately (e.g., label, comment). Simply follow the instructions
 provided by the bot. You will only need to do this once across all repos using our CLA.
 
-This project has adopted the [Microsoft Open Source Code of Conduct].
-For more information see the [Code of Conduct FAQ] or
-contact [opencode@microsoft.com] with any additional questions or comments.
+This project has adopted the [Microsoft Open Source Code of Conduct]. For more information see the [Code of Conduct FAQ] or contact [opencode@microsoft.com] with any additional questions or comments.
 
 <!-- LINKS -->
 [free account]: https://azure.microsoft.com/free/?WT.mc_id=A261C142F
