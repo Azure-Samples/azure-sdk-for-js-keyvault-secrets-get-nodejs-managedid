@@ -126,9 +126,9 @@ This project has adopted the [Microsoft Open Source Code of Conduct]. For more i
 [App registrations]: https://azure.microsoft.com/documentation/articles/resource-group-create-service-principal-portal/
 [Azure Key Vault]:https://docs.microsoft.com/en-us/azure/key-vault/quick-create-portal
 [Add a secret]: https://docs.microsoft.com/en-us/azure/key-vault/quick-create-portal#add-a-secret-to-key-vault
-[Azure Web App]: https://docs.microsoft.com/en-us/azure/app-service/app-service-web-get-started-nodejs
 [Node.js]: https://nodejs.org/en/download/
 [Git]: https://www.git-scm.com/
+[Azure Web App]: https://docs.microsoft.com/en-us/azure/app-service/app-service-web-get-started-nodejs
 [how to push using local git through portal]: https://docs.microsoft.com/en-us/azure/app-service/app-service-deploy-local-git
 [Microsoft Open Source Code of Conduct]: https://opensource.microsoft.com/codeofconduct/
 [Code of Conduct FAQ]: https://opensource.microsoft.com/codeofconduct/faq/
