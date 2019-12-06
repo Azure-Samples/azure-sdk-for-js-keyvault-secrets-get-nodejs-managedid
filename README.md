@@ -10,7 +10,7 @@ description: "How to set and get secrets from Azure Key Vault with Azure Managed
 urlFragment: get-set-keyvault-secrets-managed-id-nodejs
 ---
 
-# How to set and get secrets from Azure Key Vault with Azure Managed Identities and Node.js.
+# How to set and get secrets from Azure Key Vault with Azure Managed Identities and Node.js
 
 ## SDK Versions
 In this sample, you will find the following folders:
