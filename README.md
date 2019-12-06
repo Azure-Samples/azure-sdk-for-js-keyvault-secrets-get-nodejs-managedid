@@ -21,7 +21,7 @@ To run and deploy this sample, you need the following:
 * [Node.js]
 * [Git]
 * An Azure subscription to create a Key Vault and other services(such as App Service) used in this sample. 
-* An App registration to Authenticate.
+* An App registration to authenticate.
 
 If you don't have an Azure subscription or App registration, create a [free account] or [App registration] before you begin.
 
