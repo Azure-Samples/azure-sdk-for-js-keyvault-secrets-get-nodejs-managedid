@@ -3,8 +3,8 @@ page_type: sample
 languages:
 - javascript
 products:
-- azure-app-service
 - azure-key-vault
+- azure-app-service
 description: "How to set and get secrets from Azure Key Vault with Azure Managed Identities and JavaScript."
 urlFragment: get-set-keyvault-secrets-managed-id-javascript
 ---
