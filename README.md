@@ -2,14 +2,15 @@
 page_type: sample
 languages:
 - javascript
+- nodejs
 products:
 - azure-key-vault
 - azure-app-service
-description: "How to set and get secrets from Azure Key Vault with Azure Managed Identities and JavaScript."
-urlFragment: get-set-keyvault-secrets-managed-id-javascript
+description: "How to set and get secrets from Azure Key Vault with Azure Managed Identities and Node.js."
+urlFragment: get-set-keyvault-secrets-managed-id-nodejs
 ---
 
-# How to set and get secrets from Azure Key Vault with Azure Managed Identities and JavaScript.
+# How to set and get secrets from Azure Key Vault with Azure Managed Identities and Node.js.
 
 ## SDK Versions
 In this sample, you will find the following folders:
@@ -43,7 +44,7 @@ From the Azure Portal, go to the Key Vault's access policies, and grant yourself
 1.  Clone the repository.
 
     ``` bash
-    git clone https://github.com/Azure-Samples/app-service-msi-keyvault-node.git
+    git clone https://github.com/Azure-Samples/azure-sdk-for-js-keyvault-secrets-get-nodejs-managedid.git
     ```
 
 2.  Run the following command to install dependencies for "SDK version 3" and "SDK version 4":
