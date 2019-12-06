@@ -20,10 +20,10 @@ In this sample, you will find the following folders:
 To run and deploy this sample, you need the following:
 * [Node.js]
 * [Git]
-* An Azure subscription to create an App Service and a Key Vault. 
+* An Azure subscription to create a Key Vault and other services (such as App Service) used in this sample. 
 * An App registration to Authenticate.
 
-If you don't have an Azure subscription or App registrations, create a [free account] or [App registrations] before you begin.
+If you don't have an Azure subscription or App registration, create a [free account] or [App registration] before you begin.
 
 ### Step 1: Create an Azure Key Vault and add a secret
 * Create an [Azure Key Vault] from Azure Portal.
@@ -94,14 +94,14 @@ From the Azure Portal, go to the Key Vault's access policies, and grant yourself
    - `/` : This sample itself
 
 ## Deploy this sample to Azure
-1.  Create an [Azure Web App].
+1.  Create a [Node.js Web App] in Azure.
 
-2.  Set environment variables in the **Settings** > **Configuration** > **Application Settings** of your WebApp. You can also change the value of the variables from `null` in the index.js file.
+2.  Set environment variables in the **Settings** > **Configuration** > **Application Settings** of your Web App. You can also change the value of the variables from `null` in the index.js file.
 
 3.  This repository is ready to be deployed using local git. Read this tutorial to get more information on [how to push using local git through portal].
 
 ## Summary
-The web app was successfully able to get a secret at runtime from Azure Key Vault using your developer account during development, and using Azure Managed Identities when deployed to Azure, without any code change between local development environment and Azure. 
+The Web App was successfully able to get a secret at runtime from Azure Key Vault using your developer account during development, and using Azure Managed Identities when deployed to Azure, without any code change between local development environment and Azure. 
 As a result, you did not have to explicitly handle a service principal credential to authenticate to Azure AD to get a token to call Key Vault. You do not have to worry about renewing the service principal credential either, since Azure Managed Identities takes care of that.
 
 ## Troubleshooting
@@ -123,12 +123,12 @@ This project has adopted the [Microsoft Open Source Code of Conduct]. For more i
 
 <!-- LINKS -->
 [free account]: https://azure.microsoft.com/free/?WT.mc_id=A261C142F
-[App registrations]: https://azure.microsoft.com/documentation/articles/resource-group-create-service-principal-portal/
+[App registration]: https://azure.microsoft.com/documentation/articles/resource-group-create-service-principal-portal/
 [Azure Key Vault]:https://docs.microsoft.com/en-us/azure/key-vault/quick-create-portal
 [Add a secret]: https://docs.microsoft.com/en-us/azure/key-vault/quick-create-portal#add-a-secret-to-key-vault
 [Node.js]: https://nodejs.org/en/download/
 [Git]: https://www.git-scm.com/
-[Azure Web App]: https://docs.microsoft.com/en-us/azure/app-service/app-service-web-get-started-nodejs
+[Node.js Web App]: https://docs.microsoft.com/en-us/azure/app-service/app-service-web-get-started-nodejs
 [how to push using local git through portal]: https://docs.microsoft.com/en-us/azure/app-service/app-service-deploy-local-git
 [Microsoft Open Source Code of Conduct]: https://opensource.microsoft.com/codeofconduct/
 [Code of Conduct FAQ]: https://opensource.microsoft.com/codeofconduct/faq/
