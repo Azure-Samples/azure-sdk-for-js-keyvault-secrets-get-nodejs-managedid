@@ -17,10 +17,10 @@ In this sample, you will find the following folders:
 * **v3** - references Key Vault SDK v3
 * **v4** - references Key Vault SDK v4
 
-## Foreword
-This sample shows that the Web App can get a secret at runtime from Azure Key Vault using your developer account during development, and using Azure Managed Identities when deployed to Azure, without any code change between local development environment and Azure.
+## Introduction
+This sample will show how to get a secret from Azure Key Vault using a Web App, and using Azure Managed Identities when deploy to Azure, without any code change between local development environment and Azure.
 
-As a result, you do not have to explicitly handle a service principal credential to authenticate to Azure AD to get a token to call Key Vault. You do not have to worry about renewing the service principal credential either, since Azure Managed Identities takes care of that.
+As a result, to authenticate to Azure AD to get a token to call Key Vault, a service principal credential will not have to explicitly handled, and Azure Managed Identities will take care of renew the service principal credential.
 
 
 ## Prerequisites
