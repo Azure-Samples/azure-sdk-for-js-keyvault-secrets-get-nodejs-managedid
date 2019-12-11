@@ -17,11 +17,15 @@ In this sample, you will find the following folders:
 * **v3** - references Key Vault SDK v3
 * **v4** - references Key Vault SDK v4
 
+## Introduction
+This sample will show how Web App get a secret at runtime from Azure Key Vault using developer account during development, and using Azure Managed Identities when deploy to Azure, without any code change between local development environment and Azure. As a result, it doesn't have to explicitly handle a service principal credential to authenticate to Azure AD to get a token to call Key Vault. It doesn't have to worry about renewing the service principal credential either, since Azure Managed Identities takes care of that.
+
+
 ## Prerequisites
 To run and deploy this sample, you need the following:
 * [Node.js]
 * [Git]
-* An Azure subscription to create a Key Vault and other services(such as App Service) used in this sample. 
+* An Azure subscription to create a Key Vault and other services(such as App Service) used in this sample.
 * An App registration to authenticate.
 
 If you don't have an Azure subscription or App registration, create a [free account] or [App registration] before you begin.
@@ -31,7 +35,7 @@ If you don't have an Azure subscription or App registration, create a [free acco
 * [Add a secret].
 
 ### Step 2: Grant yourself Secret Management access to the Key Vault
-From the Azure Portal, go to the Key Vault's access policies, and grant yourself **Secret Management** access to the Key Vault. This will allow you to run the application on your local development machine. 
+From the Azure Portal, go to the Key Vault's access policies, and grant yourself **Secret Management** access to the Key Vault. This will allow you to run the application on your local development machine.
 
 * On your Key Vault **Settings** pages, Select **Access policies**.
 * Click on **Add Access Policy**.
@@ -69,6 +73,7 @@ From the Azure Portal, go to the Key Vault's access policies, and grant yourself
     ``` bash
     export KEY_VAULT_URL = "<YourKeyVaultUrl>"
     export SECRET_NAME = "<YourSecretName>"
+    export SECRET_VERSION = "<YourSecretVersion>"
     export AZURE_TENANT_ID = "<YourTenantId>"
     export AZURE_CLIENT_ID = "<YourClientId>"
     export AZURE_CLIENT_SECRET = "<YourClientSecret>"
@@ -78,6 +83,7 @@ From the Azure Portal, go to the Key Vault's access policies, and grant yourself
     ``` cmd
     setx KEY_VAULT_URL "<YourKeyVaultUrl>"
     setx SECRET_NAME "<YourSecretName>"
+    setx SECRET_VERSION "<YourSecretVersion>"
     setx AZURE_TENANT_ID "<YourTenantId>"
     setx AZURE_CLIENT_ID "<YourClientId>"
     setx AZURE_CLIENT_SECRET "<YourClientSecret>"
@@ -89,11 +95,6 @@ From the Azure Portal, go to the Key Vault's access policies, and grant yourself
     node index.js
     ```
 
-5. This sample exposes two endpoints:
-  
-   - `/ping` : This just answers "Hello World!!!" and is a good way to test if your packages are installed correctly without testing Azure itself.
-   - `/` : This sample itself
-
 ## Deploy this sample to Azure
 1.  Create a [Node.js Web App] in Azure.
 
@@ -101,18 +102,14 @@ From the Azure Portal, go to the Key Vault's access policies, and grant yourself
 
 3.  This repository is ready to be deployed using local git. Read this tutorial to get more information on [how to push using local git through portal].
 
-## Summary
-The Web App was successfully able to get a secret at runtime from Azure Key Vault using your developer account during development, and using Azure Managed Identities when deployed to Azure, without any code change between local development environment and Azure. 
-As a result, you did not have to explicitly handle a service principal credential to authenticate to Azure AD to get a token to call Key Vault. You do not have to worry about renewing the service principal credential either, since Azure Managed Identities takes care of that.
-
 ## Troubleshooting
 ### Common issues across environments:
 * Access denied
 
-The principal used does not have access to the Key Vault. The principal used in show on the web page. Grant that user (in case of developer context) or application **Get secret** access to the Key Vault. 
+The principal used does not have access to the Key Vault. The principal used in show on the web page. Grant that user (in case of developer context) or application **Get secret** access to the Key Vault.
 
 ## Contributing
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
+This project welcomes contributions and suggestions. Most contributions require you to agree to a
 Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
 the rights to use your contribution. For details, visit https://cla.microsoft.com.
 

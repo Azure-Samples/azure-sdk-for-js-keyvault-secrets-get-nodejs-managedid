@@ -6,11 +6,9 @@ const SECRET_NAME = null || process.env['SECRET_NAME'];
 
 let app = express();
 let clientId = null || process.env['AZURE_CLIENT_ID']; // service principal
-let tenantId = null || process.env['AZURE_TENANT_ID']; // tenant id
-let clientSecret = null || process.env['AZURE_CLIENT_SECRET'];
 
 function getKeyVaultCredentials() {
-  return new identity.ClientSecretCredential(tenantId,clientId,clientSecret);
+  return new identity.ChainedTokenCredential(new identity.DefaultAzureCredential(), new identity.ManagedIdentityCredential(clientId));
 }
 
 function getKeyVaultSecret(credentials) {
@@ -26,10 +24,6 @@ app.get('/', function (req, res) {
     }).catch(function (err) {
       res.send(err);
     });
-});
-
-app.get('/ping', function (req, res) {
-  res.send('Hello World!!!');
 });
 
 let port = process.env.PORT || 3000;
