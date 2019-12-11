@@ -25,7 +25,7 @@ This sample will show how Web App get a secret at runtime from Azure Key Vault u
 To run and deploy this sample, you need the following:
 * [Node.js]
 * [Git]
-* An Azure subscription to create a Key Vault and other services(such as App Service) used in this sample. 
+* An Azure subscription to create a Key Vault and other services(such as App Service) used in this sample.
 * An App registration to authenticate.
 
 If you don't have an Azure subscription or App registration, create a [free account] or [App registration] before you begin.
@@ -35,7 +35,7 @@ If you don't have an Azure subscription or App registration, create a [free acco
 * [Add a secret].
 
 ### Step 2: Grant yourself Secret Management access to the Key Vault
-From the Azure Portal, go to the Key Vault's access policies, and grant yourself **Secret Management** access to the Key Vault. This will allow you to run the application on your local development machine. 
+From the Azure Portal, go to the Key Vault's access policies, and grant yourself **Secret Management** access to the Key Vault. This will allow you to run the application on your local development machine.
 
 * On your Key Vault **Settings** pages, Select **Access policies**.
 * Click on **Add Access Policy**.
@@ -95,11 +95,6 @@ From the Azure Portal, go to the Key Vault's access policies, and grant yourself
     node index.js
     ```
 
-5. This sample exposes two endpoints:
-  
-   - `/ping` : This just answers "Hello World!!!" and is a good way to test if your packages are installed correctly without testing Azure itself.
-   - `/` : This sample itself
-
 ## Deploy this sample to Azure
 1.  Create a [Node.js Web App] in Azure.
 
@@ -111,10 +106,10 @@ From the Azure Portal, go to the Key Vault's access policies, and grant yourself
 ### Common issues across environments:
 * Access denied
 
-The principal used does not have access to the Key Vault. The principal used in show on the web page. Grant that user (in case of developer context) or application **Get secret** access to the Key Vault. 
+The principal used does not have access to the Key Vault. The principal used in show on the web page. Grant that user (in case of developer context) or application **Get secret** access to the Key Vault.
 
 ## Contributing
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
+This project welcomes contributions and suggestions. Most contributions require you to agree to a
 Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
 the rights to use your contribution. For details, visit https://cla.microsoft.com.
 
