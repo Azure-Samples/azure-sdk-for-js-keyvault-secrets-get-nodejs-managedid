@@ -1,6 +1,6 @@
 {
-  "name": "app-service-msi-keyvault-node",
-  "description": "MSI App-service sample for Azure App Service",
+  "name": "azure-sdk-for-js-keyvault-secrets-get-nodejs-managedid",
+  "description": "App-service sample for Azure App Service",
   "version": "0.0.1",
   "private": true,
   "license": "MIT",

@@ -17,6 +17,12 @@ In this sample, you will find the following folders:
 * **v3** - references Key Vault SDK v3
 * **v4** - references Key Vault SDK v4
 
+## Foreword
+This sample shows that the Web App can get a secret at runtime from Azure Key Vault using your developer account during development, and using Azure Managed Identities when deployed to Azure, without any code change between local development environment and Azure.
+
+As a result, you do not have to explicitly handle a service principal credential to authenticate to Azure AD to get a token to call Key Vault. You do not have to worry about renewing the service principal credential either, since Azure Managed Identities takes care of that.
+
+
 ## Prerequisites
 To run and deploy this sample, you need the following:
 * [Node.js]
@@ -69,6 +75,7 @@ From the Azure Portal, go to the Key Vault's access policies, and grant yourself
     ``` bash
     export KEY_VAULT_URL = "<YourKeyVaultUrl>"
     export SECRET_NAME = "<YourSecretName>"
+    export SECRET_VERSION = "<YourSecretVersion>"
     export AZURE_TENANT_ID = "<YourTenantId>"
     export AZURE_CLIENT_ID = "<YourClientId>"
     export AZURE_CLIENT_SECRET = "<YourClientSecret>"
@@ -78,6 +85,7 @@ From the Azure Portal, go to the Key Vault's access policies, and grant yourself
     ``` cmd
     setx KEY_VAULT_URL "<YourKeyVaultUrl>"
     setx SECRET_NAME "<YourSecretName>"
+    setx SECRET_VERSION "<YourSecretVersion>"
     setx AZURE_TENANT_ID "<YourTenantId>"
     setx AZURE_CLIENT_ID "<YourClientId>"
     setx AZURE_CLIENT_SECRET "<YourClientSecret>"
@@ -100,10 +108,6 @@ From the Azure Portal, go to the Key Vault's access policies, and grant yourself
 2.  Set environment variables in the **Settings** > **Configuration** > **Application Settings** of your Web App. You can also change the value of the variables from `null` in the index.js file.
 
 3.  This repository is ready to be deployed using local git. Read this tutorial to get more information on [how to push using local git through portal].
-
-## Summary
-The Web App was successfully able to get a secret at runtime from Azure Key Vault using your developer account during development, and using Azure Managed Identities when deployed to Azure, without any code change between local development environment and Azure. 
-As a result, you did not have to explicitly handle a service principal credential to authenticate to Azure AD to get a token to call Key Vault. You do not have to worry about renewing the service principal credential either, since Azure Managed Identities takes care of that.
 
 ## Troubleshooting
 ### Common issues across environments:
