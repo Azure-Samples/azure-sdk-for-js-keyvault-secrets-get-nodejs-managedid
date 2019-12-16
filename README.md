@@ -18,14 +18,14 @@ In this sample, you will find the following folders:
 * **v4** - references Key Vault SDK v4
 
 ## Introduction
-This sample will show how Web App get a secret at runtime from Azure Key Vault using developer account during development, and using Azure Managed Identities when deploy to Azure, without any code change between local development environment and Azure. As a result, it doesn't have to explicitly handle a service principal credential to authenticate to Azure AD to get a token to call Key Vault. It doesn't have to worry about renewing the service principal credential either, since Azure Managed Identities takes care of that.
+This sample will show how a Web App gets a secret at runtime from Azure Key Vault using a developer account during development, and using Azure Managed Identities when deployed to Azure, without any code changes between local development environment and Azure. As a result, you don't have to explicitly handle a service principal credential to authenticate to Azure AD to get a token to call Key Vault. You also don't have to worry about renewing the service principal credential either, since Azure Managed Identities takes care of that.
 
 
 ## Prerequisites
 To run and deploy this sample, you need the following:
 * [Node.js]
 * [Git]
-* An Azure subscription to create a Key Vault and other services(such as App Service) used in this sample.
+* An Azure subscription to create a Key Vault and other services, such as App Service, used in this sample.
 * An App registration to authenticate.
 
 If you don't have an Azure subscription or App registration, create a [free account] or [App registration] before you begin.
