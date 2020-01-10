@@ -119,7 +119,7 @@ provided by the bot. You will only need to do this once across all repos using o
 
 This project has adopted the [Microsoft Open Source Code of Conduct]. For more information see the [Code of Conduct FAQ] or contact [opencode@microsoft.com] with any additional questions or comments.
 
-<!-- LINKS -->
+<!-- LINKS  -->
 [free account]: https://azure.microsoft.com/free/?WT.mc_id=A261C142F
 [App registration]: https://azure.microsoft.com/documentation/articles/resource-group-create-service-principal-portal/
 [Azure Key Vault]:https://docs.microsoft.com/en-us/azure/key-vault/quick-create-portal
