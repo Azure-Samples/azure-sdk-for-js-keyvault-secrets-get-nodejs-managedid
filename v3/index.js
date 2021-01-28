@@ -1,3 +1,5 @@
+console.warn('This sample uses azure-keyvault package which is deprecated.');
+
 const express = require('express');
 const msRestAzure = require('ms-rest-azure');
 const KeyVault = require('azure-keyvault');
