@@ -14,8 +14,14 @@ urlFragment: get-set-keyvault-secrets-managed-id-nodejs
 
 ## SDK Versions
 In this sample, you will find the following folders:
-* **v3** - references Key Vault SDK v3
-* **v4** - references Key Vault SDK v4
+* **v3** - uses [azure-keyvault](https://www.npmjs.com/package/azure-keyvault), the legacy package for Key Vault Secrets  
+* **v4** - uses [@azure/keyvault-secrets](https://www.npmjs.com/package/@azure/keyvault-secrets), the latest package for Key Vault Secrets
+
+We strongly recommend using the latest packages in your projects.
+For more samples using the latest Key vault packages, see
+- [JavaScript samples for Key Vault secrets](https://docs.microsoft.com/samples/azure/azure-sdk-for-js/keyvault-secrets-javascript/)
+- [JavaScript samples for Key Vault keys](https://docs.microsoft.com/samples/azure/azure-sdk-for-js/keyvault-keys-javascript/)
+- [JavaScript samples for Key Vault certificates](https://docs.microsoft.com/samples/azure/azure-sdk-for-js/keyvault-certificates-javascript/)
 
 ## Introduction
 This sample will show how a Web App gets a secret at runtime from Azure Key Vault using a developer account during development, and using Azure Managed Identities when deployed to Azure, without any code changes between local development environment and Azure. As a result, you don't have to explicitly handle a service principal credential to authenticate to Azure AD to get a token to call Key Vault. You also don't have to worry about renewing the service principal credential either, since Azure Managed Identities takes care of that.

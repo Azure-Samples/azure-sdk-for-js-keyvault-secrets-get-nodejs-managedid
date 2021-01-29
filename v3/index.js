@@ -1,3 +1,5 @@
+console.warn('This sample uses the azure-keyvault package which is deprecated in favor of @azure/keyvault-secrets, @azure/keyvault-keys and @azure/keyvault-certificates packages.');
+
 const express = require('express');
 const msRestAzure = require('ms-rest-azure');
 const KeyVault = require('azure-keyvault');

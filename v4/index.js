@@ -8,7 +8,7 @@ let app = express();
 let clientId = null || process.env['AZURE_CLIENT_ID']; // service principal
 
 function getKeyVaultCredentials() {
-  return new identity.ChainedTokenCredential(new identity.DefaultAzureCredential(), new identity.ManagedIdentityCredential(clientId));
+  return new identity.DefaultAzureCredential();
 }
 
 function getKeyVaultSecret(credentials) {
